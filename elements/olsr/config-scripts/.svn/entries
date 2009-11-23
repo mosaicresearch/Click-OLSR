@@ -1,0 +1,53 @@
+8
+
+dir
+6
+svn+ssh://jbergs@euterpe.cmi.ua.ac.be/home/PATS/jbergs/svn/research/click-1.6.0/elements/olsr/config-scripts
+svn+ssh://jbergs@euterpe.cmi.ua.ac.be/home/PATS/jbergs/svn/research
+
+
+
+2008-12-09T08:21:15.236462Z
+3
+jbergs
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+6ec0806f-d8c2-dd11-963a-003048354630
+
+make-olsr-config.pl
+file
+
+
+
+
+2009-04-17T07:11:15.000000Z
+ccc9b7c6ab9fb4e66ff2d0bc4a509cae
+2008-12-09T08:21:15.236462Z
+3
+jbergs
+
+olsr.sh
+file
+
+
+
+
+2009-04-17T07:11:15.000000Z
+3507d67577b2c01b9c2f71120775c144
+2008-12-09T08:21:15.236462Z
+3
+jbergs
+has-props
+
