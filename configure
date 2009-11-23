@@ -748,6 +748,7 @@ enable_ip
 enable_ip6
 enable_ipsec
 enable_local
+enable_olsr
 enable_radio
 enable_simple
 enable_standard
@@ -1421,6 +1422,7 @@ Optional Features:
   --enable-ip6            include IPv6 elements (EXPERIMENTAL)
   --enable-ipsec          include IP security elements
   --enable-local          include local elements
+  --enable-olsr           include elements for olsr
   --enable-radio          include radio elements (EXPERIMENTAL)
   --enable-simple         include simple versions of other elements
   --disable-standard      do not include standard elements
@@ -6182,6 +6184,17 @@ if test "x$enable_local" = xyes; then
     :
 
 fi
+# Check whether --enable-olsr was given.
+if test "${enable_olsr+set}" = set; then :
+  enableval=$enable_olsr;
+else
+  enable_olsr=NO
+fi
+test "x$enable_all_elements" = xyes -a "x$enable_olsr" = xNO && enable_olsr=yes
+if test "x$enable_olsr" = xyes; then
+    :
+
+fi
 # Check whether --enable-radio was given.
 if test "${enable_radio+set}" = set; then :
   enableval=$enable_radio;
@@ -6898,7 +6911,7 @@ else
 
 	    	    ac_cv_endian=0
 	    cat > conftest.$ac_ext <<EOF
-#line 6901 "configure"
+#line 6914 "configure"
 #include "confdefs.h"
 #include <$endian_hdr>
 #ifdef __BYTE_ORDER
@@ -11056,6 +11069,10 @@ fi
 
 if test "x$ac_cv_under_linux" = xyes; then
     provisions="$provisions linux"
+fi
+
+if test "x$enable_olsr" = xyes; then
+    provisions="$provisions olsr"
 fi
 
 if test $ac_have_linux_kernel = y; then

@@ -281,6 +281,7 @@ ELEMENTS_ARG_ENABLE(ip, [include IP elements], yes)
 ELEMENTS_ARG_ENABLE(ip6, [include IPv6 elements (EXPERIMENTAL)], NO, AC_DEFINE(HAVE_IP6))
 ELEMENTS_ARG_ENABLE(ipsec, [include IP security elements], NO, AC_DEFINE(HAVE_IPSEC))
 ELEMENTS_ARG_ENABLE(local, [include local elements], NO)
+ELEMENTS_ARG_ENABLE(olsr, [include elements for olsr], NO)
 ELEMENTS_ARG_ENABLE(radio, [include radio elements (EXPERIMENTAL)], NO)
 ELEMENTS_ARG_ENABLE(simple, [include simple versions of other elements], NO)
 dnl ELEMENTS_ARG_ENABLE(snmp, [include SNMP elements], NO)
@@ -1424,6 +1425,11 @@ fi
 dnl add 'linux' if compiling under linux
 if test "x$ac_cv_under_linux" = xyes; then
     provisions="$provisions linux"
+fi
+
+dnl add 'olsr' if olsr elements are available
+if test "x$enable_olsr" = xyes; then
+    provisions="$provisions olsr"
 fi
 
 dnl add provision for linux kernel version
