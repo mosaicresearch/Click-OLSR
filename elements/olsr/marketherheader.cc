@@ -22,7 +22,6 @@
 CLICK_DECLS
 
 MarkEtherHeader::MarkEtherHeader()
-    : Element(1, 1)
 {
 }
 

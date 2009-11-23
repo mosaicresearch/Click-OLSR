@@ -27,6 +27,7 @@ public:
 
 	const char *class_name() const		{ return "MarkEtherHeader"; }
 	const char *processing() const		{ return AGNOSTIC; }
+    const char *port_count() const  		{ return "1/1"; }  
 
 	int configure(Vector<String> &, ErrorHandler *);
 
